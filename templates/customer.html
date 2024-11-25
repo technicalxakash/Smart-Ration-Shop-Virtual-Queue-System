@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Page</title>
+</head>
+<body>
+    <h1>Reserve Your Token</h1>
+    <form method="POST" action="/reserve">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <label>Contact (Mobile):</label>
+        <input type="text" name="contact" required>
+        <button type="submit">Reserve Token</button>
+    </form>
+
+    <h2>Queue Status</h2>
+    <table border="1">
+        <tr>
+            <th>Token Number</th>
+            <th>Status</th>
+        </tr>
+        {% for token in tokens %}
+        <tr>
+            <td>{{ token[3] }}</td>
+            <td>{{ token[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
